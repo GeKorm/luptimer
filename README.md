@@ -1,4 +1,4 @@
-luptimer
+[luptimer](http://www.luptimer.com)
 ========
 
 Lightweight Ultra Precision (javascript) Timer
