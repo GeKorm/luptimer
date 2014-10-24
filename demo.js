@@ -59,8 +59,8 @@ jQuery('#pause-button').on('click', function () {
             secondsDsp.text(0);
             minutesDsp.text(0);
             hoursDsp.text(0);
-            ('#pause-button').css('outline', 'none');
-            ('#pause-button').text('Pause');
+            jQuery('#pause-button').css('outline', 'none');
+            jQuery('#pause-button').text('Pause');
             startDoc();
         }
         pauseCount += 1;
