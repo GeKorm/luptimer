@@ -82,14 +82,71 @@
             timerRunning = false;
             timerPaused = false;
         },
-        time: function () {
-            return displayTime;
+        time: function (unit) {
+            if (typeof unit === 'undefined') {
+                return displayTime;
+            } else {
+                if (unit === 'hours') {
+                    return hoursDsp;
+                } else if (unit === 'minutes') {
+                    return minutesDsp;
+                } else if (unit === 'seconds') {
+                    return secondsDsp;
+                } else if (unit === 'milliseconds') {
+                    return millisecondsDsp;
+                } else if (unit === 'microseconds') {
+                    return microsecondsDsp;
+                } else {
+                    console.log("No time unit specified");
+                }
+            }
         },
         total: function () {
             return totalTimeSincePageLoad();
         },
         display: function (selector, unit) {
-            return totalTimeSincePageLoad();
+            if (typeof unit === 'undefined') {
+                return displayTime;
+            } else {
+                if (unit === 'hours') {
+                    (function hdsp() {
+                        if (timerRunning === true) {
+                            requestAnimationFrame(hdsp);
+                            document.querySelector(selector).textContent = hoursDsp.toString();
+                        }
+                    })();
+                } else if (unit === 'minutes') {
+                    (function mdsp() {
+                        if (timerRunning === true) {
+                            requestAnimationFrame(mdsp);
+                            document.querySelector(selector).textContent = minutesDsp.toString();
+                        }
+                    })();
+                } else if (unit === 'seconds') {
+                    (function sdsp() {
+                        if (timerRunning === true) {
+                            requestAnimationFrame(sdsp);
+                            document.querySelector(selector).textContent = secondsDsp.toString();
+                        }
+                    })();
+                } else if (unit === 'milliseconds') {
+                    (function mildsp() {
+                        if (timerRunning === true) {
+                            requestAnimationFrame(mildsp);
+                            document.querySelector(selector).textContent = millisecondsDsp.toString();
+                        }
+                    })();
+                } else if (unit === 'microseconds') {
+                    (function micdsp() {
+                        if (timerRunning === true) {
+                            requestAnimationFrame(micdsp);
+                            document.querySelector(selector).textContent = microsecondsDsp.toString();
+                        }
+                    })();
+                } else {
+                    console.log("No time unit specified");
+                }
+            }
         }
     };
     window.$luptimer = $luptimer;
