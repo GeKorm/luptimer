@@ -87,15 +87,15 @@
                 return displayTime;
             } else {
                 if (unit === 'hours') {
-                    return hoursDsp;
+                    return Math.floor(Math.floor(Math.floor(displayTime / 1000) / 60) / 60);
                 } else if (unit === 'minutes') {
-                    return minutesDsp;
+                    return Math.floor(Math.floor(displayTime / 1000) / 60);
                 } else if (unit === 'seconds') {
-                    return secondsDsp;
+                    return Math.floor(displayTime / 1000);
                 } else if (unit === 'milliseconds') {
-                    return millisecondsDsp;
+                    return Math.floor(displayTime);
                 } else if (unit === 'microseconds') {
-                    return microsecondsDsp;
+                    return Math.floor(displayTime * 1000);
                 } else {
                     console.log("No time unit specified");
                 }
